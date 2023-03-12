@@ -43,9 +43,9 @@ db.users.find()
 
 
 // ==================================================================================
-// goal: insert many objects in the "users" collection at the same time
+// goal: insert many objects in a new "books" collection at the same time
 // ==================================================================================
-// insert many users at once into collection
+// insert many books at once into collection
 many_users = [
     {
         first_name: "Richard",
@@ -57,7 +57,7 @@ many_users = [
     },
 ];
 db.users.insertMany(many_users);
-//check the documents in the "users" collection
+//check the documents in the "books" collection
 db.users.find()
 
 
@@ -95,13 +95,13 @@ db.users.insertMany(
 
 
 // ==================================================================================
-// goal: insert many objects in the "users" collection with conflicting "_id"s
+// goal: insert many objects in the "books" collection with conflicting "_id"s
 //       but try to insert as many document as possible
 // ==================================================================================
-// insert many object "users" collection with conflicting "_id"s
+// insert many object "usbooksers" collection with conflicting "_id"s
 // but with ordered:false option 
 // and see how many of them are inserted into the database
-db.users.insertMany(
+db.books.insertMany(
     [
         {
             _id: 10,
@@ -124,7 +124,7 @@ db.users.insertMany(
         "ordered": false
     }
 )
-// you will see this time three of these objects are inserted to "users" collection
+// you will see this time three of these objects are inserted to "books" collection
 // with "ordered": false MongoDB inserts each of the documents without care
 // to insert objects in ordered way, and therfore inserts as documents as 
 // possible to the collection
